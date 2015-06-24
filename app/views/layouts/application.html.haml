@@ -1,0 +1,13 @@
+!!!
+%html{"ng-app" => "LayoutApp"}
+  %head
+    %title Zoocat
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body
+    %nav(ng-controller='MenuController')
+      %a(href='/main' ng-class='{ active: isCurrent("main")}') Main
+      %a(href='/secondary' ng-class='{ active: isCurrent("secondary")}') Secondary
+      %a(href='/logout' ng-class='{ active: isCurrent("logout")}') Logout
+    = yield
